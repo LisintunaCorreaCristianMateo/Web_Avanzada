@@ -77,8 +77,10 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "Arial", maxWidth: "1200px", margin: "0 auto" }}>
-      <h1 style={{ textAlign: "center", color: "#007bff" }}> Sistema de Gestión de Salarios de Obreros</h1>
+    <div className="container py-4">
+      <h1 className="text-center text-primary mb-4">
+        <i className="bi bi-cash-stack"></i> Sistema de Gestión de Salarios de Obreros
+      </h1>
 
       <ObreroForm
         onGuardar={guardarObrero}
@@ -86,7 +88,7 @@ function App() {
         onCancelEdit={() => setEditObrero(null)}
       />
 
-      <hr style={{ margin: "2rem 0" }} />
+      <hr className="my-4" />
 
       <ObrerosList
         obreros={obreros}

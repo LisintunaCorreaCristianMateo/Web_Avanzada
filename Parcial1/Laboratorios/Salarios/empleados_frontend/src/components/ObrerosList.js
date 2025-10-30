@@ -2,42 +2,62 @@ import React from "react";
 
 function ObrerosList({ obreros, onEliminar, onEditar, onVerSalario }) {
   if (obreros.length === 0) {
-    return <p style={{ textAlign: "center", color: "#999" }}>No hay obreros registrados</p>;
+    return (
+      <div className="alert alert-info text-center" role="alert">
+        No hay obreros registrados
+      </div>
+    );
   }
 
   return (
     <div>
-      <h2> Lista de Obreros</h2>
-      <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "1rem" }}>
-        <thead>
-          <tr >
-            <th style={{ padding: "0.8rem", border: "1px " }}>ID</th>
-            <th style={{ padding: "0.8rem", border: "1px " }}>Nombre</th>
-            <th style={{ padding: "0.8rem", border: "1px " }}>Horas Trabajadas</th>
-            <th style={{ padding: "0.8rem", border: "1px " }}>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {obreros.map((obrero) => (
-            <tr key={obrero.id} style={{ textAlign: "center" }}>
-              <td style={{ padding: "0.8rem", border: "1px " }}>{obrero.id}</td>
-              <td style={{ padding: "0.8rem", border: "1px " }}>{obrero.nombre}</td>
-              <td style={{ padding: "0.8rem", border: "1px " }}>{obrero.horasTrabajadas} hrs</td>
-              <td style={{ padding: "0.8rem", border: "1px " }}>
-                <button onClick={() => onVerSalario(obrero)}>
-                  Ver Salario
-                </button>
-                <button onClick={() => onEditar(obrero)}>
-                  Editar
-                </button>
-                <button onClick={() => onEliminar(obrero.id)}>
-                  Eliminar
-                </button>
-              </td>
+      <h2 className="mb-3">📋 Lista de Obreros</h2>
+      <div className="table-responsive">
+        <table className="table table-striped table-hover table-bordered">
+          <thead className="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Horas Trabajadas</th>
+              <th>Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {obreros.map((obrero) => (
+              <tr key={obrero.id}>
+                <td>{obrero.id}</td>
+                <td>{obrero.nombre}</td>
+                <td>{obrero.horasTrabajadas} hrs</td>
+                <td>
+                  <div className="btn-group" role="group">
+                    <button
+                      onClick={() => onVerSalario(obrero)}
+                      className="btn btn-info btn-sm"
+                      title="Ver Salario"
+                    >
+                      💵 Ver Salario
+                    </button>
+                    <button
+                      onClick={() => onEditar(obrero)}
+                      className="btn btn-warning btn-sm"
+                      title="Editar"
+                    >
+                      ✏️ Editar
+                    </button>
+                    <button
+                      onClick={() => onEliminar(obrero.id)}
+                      className="btn btn-danger btn-sm"
+                      title="Eliminar"
+                    >
+                      🗑️ Eliminar
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

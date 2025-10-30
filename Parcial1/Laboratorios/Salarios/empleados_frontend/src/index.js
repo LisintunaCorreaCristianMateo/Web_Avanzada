@@ -1,5 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+// Bootstrap CSS (instalado via npm)
+import 'bootstrap/dist/css/bootstrap.min.css';
+// Bootstrap JS bundle (opcional - incluye Popper, necesario para componentes interactivos)
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+// Custom app styles (can override Bootstrap variables/classes)
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
