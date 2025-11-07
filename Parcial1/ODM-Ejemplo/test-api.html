@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API Compradores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 4px;
+            white-space: pre-wrap;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test API Compradores</h1>
+    
+    <div>
+        <h2>Crear Comprador</h2>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="email" id="correo" placeholder="Correo">
+        <input type="number" id="edad" placeholder="Edad">
+        <button onclick="crearComprador()">Crear</button>
+    </div>
+
+    <div>
+        <h2>Acciones</h2>
+        <button onclick="listarCompradores()">Listar Compradores</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        const API_URL = 'http://localhost:3000';
+
+        async function crearComprador() {
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const edad = document.getElementById('edad').value;
+
+            if (!nombre || !correo || !edad) {
+                alert('Por favor llena todos los campos');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/compradores`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nombre, correo, edad: parseInt(edad) })
+                });
+
+                const data = await response.json();
+                document.getElementById('resultado').textContent = 
+                    'Comprador creado:\n' + JSON.stringify(data, null, 2);
+                
+                // Limpiar campos
+                document.getElementById('nombre').value = '';
+                document.getElementById('correo').value = '';
+                document.getElementById('edad').value = '';
+            } catch (error) {
+                document.getElementById('resultado').textContent = 
+                    'Error: ' + error.message;
+            }
+        }
+
+        async function listarCompradores() {
+            try {
+                const response = await fetch(`${API_URL}/compradores`);
+                const data = await response.json();
+                
+                if (data.length === 0) {
+                    document.getElementById('resultado').textContent = 
+                        'No hay compradores en la base de datos';
+                } else {
+                    document.getElementById('resultado').textContent = 
+                        'Compradores encontrados:\n' + JSON.stringify(data, null, 2);
+                }
+            } catch (error) {
+                document.getElementById('resultado').textContent = 
+                    'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

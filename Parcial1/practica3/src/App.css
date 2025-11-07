@@ -1,10 +1,27 @@
 .App {
+  min-height:100vh;
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
+body{
+  background-color: rgba(245, 245, 245, 0.904);
+}
+h1{
+  font-family: Lato, sans-serif;
+  font-weight: 700; 
+  line-height: 1.1;
+  margin:40px 0;
+}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contenedor-principal{
+  min-height: 600px;
+  display:flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
