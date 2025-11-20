@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Compra de Árboles</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body class="bg-light">
+
+<!-- HEADER -->
+<nav class="navbar navbar-dark bg-success mb-4">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">
+            <i class="bi bi-tree-fill"></i> Dashboard de Compra de Árboles
+        </span>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h2 class="mb-4 text-center text-success">
+        <i class="bi bi-speedometer2"></i> Panel General
+    </h2>
+
+    <!-- CARDS -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">
+                        <i class="bi bi-cash-stack"></i> Precios disponibles
+                    </h5>
+                    <div id="card-precios" class="mt-3">Cargando...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100 border-success">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-success">
+                        <i class="bi bi-tree"></i> Total de árboles
+                    </h5>
+                    <h2 id="card-total" class="display-4 text-success mt-3">0</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100 border-warning">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning">
+                        <i class="bi bi-wallet2"></i> Total a pagar
+                    </h5>
+                    <h2 id="card-total-pagar" class="display-4 text-warning mt-3">$0.00</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="card shadow mb-4">
+        <div class="card-header bg-success text-white">
+            <h5 class="mb-0"><i class="bi bi-calculator"></i> Ingresar cantidades</h5>
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label for="paltos" class="form-label fw-bold">
+                        <i class="bi bi-tree text-success"></i> Paltos:
+                    </label>
+                    <input type="number" class="form-control form-control-lg" id="paltos" value="100" min="0">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="limones" class="form-label fw-bold">
+                        <i class="bi bi-tree text-warning"></i> Limones:
+                    </label>
+                    <input type="number" class="form-control form-control-lg" id="limones" value="200" min="0">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="chirimoyos" class="form-label fw-bold">
+                        <i class="bi bi-tree text-info"></i> Chirimoyos:
+                    </label>
+                    <input type="number" class="form-control form-control-lg" id="chirimoyos" value="300" min="0">
+                </div>
+            </div>
+
+            <div class="d-grid gap-2 mt-4">
+                <button class="btn btn-warning btn-lg" onclick="calcular()">
+                    <i class="bi bi-calculator-fill"></i> Calcular Total
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="card shadow mb-4" id="tabla-detalle" hidden>
+        <div class="card-header bg-info text-white">
+            <h5 class="mb-0"><i class="bi bi-table"></i> Detalle de Cálculo</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th><i class="bi bi-tag"></i> Tipo</th>
+                            <th><i class="bi bi-hash"></i> Cantidad</th>
+                            <th><i class="bi bi-currency-dollar"></i> Precio Unit.</th>
+                            <th><i class="bi bi-percent"></i> Descuento</th>
+                            <th><i class="bi bi-cash"></i> Subtotal Neto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detalle-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="card shadow mb-4">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0"><i class="bi bi-file-code"></i> JSON Completo</h5>
+            <button class="btn btn-success btn-sm" id="btn-descargar" onclick="descargarJSON()" disabled>
+                <i class="bi bi-download"></i> Descargar JSON
+            </button>
+        </div>
+        <div class="card-body">
+            <pre id="resultado" class="bg-dark text-light p-3 rounded" style="max-height: 400px; overflow-y: auto;">Esperando datos...</pre>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+
+</body></html>
