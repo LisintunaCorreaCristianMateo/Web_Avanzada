@@ -1,0 +1,15 @@
+.contador{
+
+    background-color: #000000;
+    width:30%;
+    padding:2rem;
+
+    margin:18px auto;
+
+    color:hsl(0, 0%, 100%);
+    font-size: 30px;
+    box-shadow: 5px 15px 20px  black;
+    border-radius: 1rem;
+    border: 6px solid#ffffff
+
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Perfil - Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Perfil de usuario</h1>
+      <section class="card">
+        <div id="profileResult" class="result">Cargando perfil...</div>
+        <div style="margin-top:12px">
+          <button id="btnBack">Volver</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const BASE_URL = 'http://localhost:3000';
+      const profileResult = document.getElementById('profileResult');
+      const btnBack = document.getElementById('btnBack');
+
+      btnBack.addEventListener('click', () => {
+        // volver a la página de login
+        window.location.href = 'index.html';
+      });
+
+      (async function loadProfile() {
+        const token = sessionStorage.getItem('authToken');
+        if (!token) {
+          profileResult.textContent = 'No hay token. Vuelve a iniciar sesión.';
+          profileResult.classList.add('error');
+          return;
+        }
+
+        try {
+          const res = await fetch(`${BASE_URL}/api/users/profile`, {
+            method: 'GET',
+            headers: { Authorization: 'Bearer ' + token },
+          });
+
+          const data = await res.json();
+          if (!res.ok) {
+            profileResult.textContent = data.msg || JSON.stringify(data);
+            profileResult.classList.add('error');
+            return;
+          }
+
+          profileResult.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+          profileResult.classList.remove('error');
+        } catch (err) {
+          console.error(err);
+          profileResult.textContent = 'Error de conexión';
+          profileResult.classList.add('error');
+        }
+      })();
+    </script>
+  </body>
+</html>

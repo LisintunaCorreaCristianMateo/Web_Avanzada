@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Front OAuth - Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Demo Login</h1>
+
+      <section class="card">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label>
+            Usuario
+            <input type="text" id="username" name="username" required />
+          </label>
+          <label>
+            Contraseña
+            <input type="password" id="password" name="password" required />
+          </label>
+          <button type="submit">Entrar</button>
+        </form>
+        <div id="loginResult" class="result"></div>
+      </section>
+
+      <section class="card">
+        <h2>Perfil (protegido)</h2>
+        <button id="btnProfile" disabled>Obtener perfil (ir a página)</button>
+        <div id="profileResult" class="result"></div>
+      </section>
+    </main>
+
+    <script>
+      // Cambiar si el backend corre en otra URL/puerto
+      const BASE_URL = 'http://localhost:3000';
+
+      const loginForm = document.getElementById('loginForm');
+      const loginResult = document.getElementById('loginResult');
+      const btnProfile = document.getElementById('btnProfile');
+      const profileResult = document.getElementById('profileResult');
+
+      let token = null;
+
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        loginResult.textContent = '';
+        profileResult.textContent = '';
+
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+
+        try {
+          const res = await fetch(`${BASE_URL}/api/auth/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password }),
+          });
+
+          const data = await res.json();
+          if (!res.ok) {
+            loginResult.textContent = data.msg || JSON.stringify(data);
+            loginResult.classList.add('error');
+            return;
+          }
+
+          // Éxito
+          token = data.token;
+          loginResult.innerHTML = '<strong>Login OK</strong><br/>Token: <code>' + token + '</code>';
+          loginResult.classList.remove('error');
+          btnProfile.disabled = false;
+        } catch (err) {
+          console.error(err);
+          loginResult.textContent = 'Error de conexión';
+          loginResult.classList.add('error');
+        }
+      });
+
+      // Al pulsar, guardamos token en sessionStorage y navegamos a indexPerfil.html
+      btnProfile.addEventListener('click', () => {
+        profileResult.textContent = '';
+        if (!token) {
+          profileResult.textContent = 'No hay token. Haz login primero.';
+          return;
+        }
+
+        try {
+          sessionStorage.setItem('authToken', token);
+          // navegar a la página de perfil
+          window.location.href = 'indexPerfil.html';
+        } catch (err) {
+          console.error(err);
+          profileResult.textContent = 'Error al guardar token';
+          profileResult.classList.add('error');
+        }
+      });
+    </script>
+  </body>
+</html>

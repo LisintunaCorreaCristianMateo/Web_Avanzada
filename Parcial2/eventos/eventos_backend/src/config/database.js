@@ -18,8 +18,12 @@ export const dbConnection = async()=>{
     try{
         await sequelize.authenticate();
         console.log("conexion a sql exitosa");
+        await sequelize.sync({alter:true});//crea o modifica tablas sin borrar datos
+        console.log("tablas sincronizadas");
     }
     catch(error){
-        console.log("error de conexion a DB")
+        console.error("Error de conexión a DB:", error);
+
+        throw error;
     }
 }

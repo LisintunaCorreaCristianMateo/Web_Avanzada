@@ -1,7 +1,7 @@
 import {DataTypes} from 'sequelize';
 import {sequelize} from "../config/database.js";
 
-export const evento = sequelize.define('Evento', 
+export const Evento = sequelize.define('Evento', 
 {
 
     id_evento:{type:DataTypes.INTEGER,primaryKey:true,autoIncrement:true},

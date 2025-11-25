@@ -1,0 +1,27 @@
+.boton-clic{
+    background-color: rgb(36, 107, 44);
+    color:oklab(97.515% -0.0055 -0.01152);
+    border-color:rgb(105, 192, 79);
+}
+.boton-reiniciar{
+    background-color: rgb(143, 59, 28);
+    color:oklab(97.515% -0.0055 -0.01152);
+    border-color:ghostwhite;
+}
+button{
+    font-family:cursive;
+    margin:10px;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 8px;
+    
+    box-shadow:0 11px 15px rgba(0, 0, 0, 0.2);
+   
+    
+}
+button:hover{
+     transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+}

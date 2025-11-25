@@ -1,5 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database.js";
+import {Cliente} from "./clienteModel.js";
+import {Evento} from "./eventoModel.js";
 
 export const Factura = sequelize.define("Factura", 
     {
@@ -10,6 +12,16 @@ export const Factura = sequelize.define("Factura",
 
     },
     {tableName:'facturas'
-        
+
     }
 );
+
+// Relaciones
+
+//cliente(1)<-->(m)Factura(m)<---->(1)evento
+
+Cliente.hasMany(Factura, { foreignKey: "clienteId", onDelete: "CASCADE" });
+Factura.belongsTo(Cliente, { foreignKey: "clienteId" });
+
+Evento.hasMany(Factura, { foreignKey: "eventoId", onDelete: "CASCADE" });
+Factura.belongsTo(Evento, { foreignKey: "eventoId" });
