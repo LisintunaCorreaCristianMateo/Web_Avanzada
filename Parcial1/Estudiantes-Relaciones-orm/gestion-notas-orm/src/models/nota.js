@@ -3,8 +3,7 @@ import { sequelize } from "../config/database.js";
 import { Estudiante } from "./estudiante.js";
 
 export const Nota = sequelize.define("Nota", {
-    id: {
-        type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+        id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
         asignatura: { type: DataTypes.STRING(100), allowNull: false },
         nota1: { type: DataTypes.FLOAT, allowNull: false, validate: { min: 0, max: 20 } },
         nota2: { type: DataTypes.FLOAT, allowNull: false, validate: { min: 0, max: 20 } },
