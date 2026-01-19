@@ -20,4 +20,4 @@ export const Nota = sequelize.define("Nota", {
 
 //relaciones: un estudiante puede tener muchas notas
 Estudiante.hasMany(Nota, { foreignKey: "estudianteId", onDelete: "CASCADE" });
-Nota.Estudiante = Nota.belongsTo(Estudiante, { foreignKey: "estudianteId" });//belongsto para clave foranea que apunte a estudiante
+Nota.belongsTo(Estudiante, { foreignKey: "estudianteId" });//belongsto para clave foranea que apunte a estudiante

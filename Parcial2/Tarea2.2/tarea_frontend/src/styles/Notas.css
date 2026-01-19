@@ -1,0 +1,128 @@
+/* Estilos migrados desde Notas.js */
+
+.nota-modal-header {
+  border-bottom: 2px solid #dee2e6;
+}
+.nota-modal-title {
+  color: #2c3e50;
+  font-weight: 600;
+}
+.nota-modal-body {
+  background-color: #f8f9fa;
+}
+.nota-detalle-box {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.nota-detalle-label {
+  color: #6c757d;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.nota-detalle-valor {
+  color: #2c3e50;
+  font-weight: 500;
+}
+.nota-detalle-parcial {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 4px 12px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  display: inline-block;
+}
+.nota-detalle-total {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.nota-detalle-total-aprobado {
+  color: #28a745;
+}
+.nota-detalle-total-reprobado {
+  color: #dc3545;
+}
+.nota-table-box {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+.nota-table-head {
+  background-color: #f1f3f5;
+  border-bottom: 2px solid #dee2e6;
+}
+.nota-table-th {
+  color: #495057;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.nota-tipo {
+  padding: 4px 10px;
+  background-color: #e9ecef;
+  color: #495057;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.nota-valor-aprobado {
+  color: #28a745;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.nota-valor-reprobado {
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.nota-aporte {
+  padding: 3px 8px;
+  background-color: #f8f9fa;
+  color: #495057;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #dee2e6;
+}
+.nota-fecha {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+.nota-observaciones {
+  color: #868e96;
+  font-size: 0.85rem;
+}
+.nota-btn-editar {
+  background-color: white;
+  border: 1px solid #dee2e6;
+  color: #495057;
+  padding: 4px 8px;
+  margin-right: 4px;
+}
+.nota-btn-eliminar {
+  background-color: white;
+  border: 1px solid #dee2e6;
+  color: #dc3545;
+  padding: 4px 8px;
+}
+.nota-btn-editar:hover {
+  background-color: #f8f9fa;
+}
+.nota-btn-eliminar:hover {
+  background-color: #dc3545;
+  color: white;
+}
+.nota-table-parcial {
+  background-color: #f1f3f5;
+  font-weight: bold;
+  color: #2c3e50;
+}
+.nota-no-evaluaciones {
+  text-align: center;
+  color: #868e96;
+}

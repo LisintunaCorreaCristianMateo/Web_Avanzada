@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+    <h1>Holaaa <span th:text="${persona.nombre}"></span>!</h1>
+
+<hr>
+<br>
+
+    <form th:action="@{/api/calcular}" method="post">
+        <label for="fechaNacimiento">Ingresa tu Fecha de nacimiento</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        <button type="submit">Calcular</button>
+    </form>
+
+    <!-- Solo muestra la edad si contiene "años, meses, días" (edad calculada) -->
+    <p th:if="${!persona.edad.isEmpty()}" th:text="'Tu edad es ' + ${persona.edad}"></p>
+    <br>
+    <br>
+    <a th:href="@{/}">Regresar</a>
+
+
+</body>
+
+</html>

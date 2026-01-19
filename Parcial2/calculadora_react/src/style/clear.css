@@ -1,0 +1,7 @@
+.boton-clear-contenedor{
+        background-color: rgb(135, 56, 56);
+    padding: 15px 30px;
+    margin:2px auto;
+    border-radius: 10px;
+    cursor:pointer;
+}

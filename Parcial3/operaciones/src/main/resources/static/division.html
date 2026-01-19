@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Division</title>
+</head>
+<body>
+<h2>Operacion Division</h2>
+<label> Primer Numero: </label>
+<input type="number" id="num1">
+
+<label> Segundo Numero: </label>
+<input type="number" id="num2">
+
+
+<br><br>
+<button onclick="dividir()"> Calcular</button>
+<br><br>
+<h3>Resultado: </h3>
+
+<p id="resultado"></p>
+
+<br><br>
+
+<a href="index.html">Volver</a>
+
+<!---funcion division--->
+
+<script>
+    function dividir(){
+        let a= parseFloat(document.getElementById("num1").value);
+        let b= parseFloat(document.getElementById("num2").value);
+
+        if (b==0){
+            document.getElementById("resultado").innerText = "No se puede dividir para cero";
+        }else{
+            document.getElementById("resultado").innerText= a/b;
+
+        }
+    }
+</script>
+
+</body>
+</html>

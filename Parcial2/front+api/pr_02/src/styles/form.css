@@ -1,0 +1,45 @@
+.formContainer{
+ 
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+       margin: 0 auto;
+   width: 30%;
+   display: flex;
+   justify-content: center;
+   border: 2px solid rgb(189, 194, 199);
+   box-shadow: 0 0 8px rgb(172, 178, 178);
+}
+
+.imputClass{
+    border-radius: 6px;
+    padding:10px;
+    margin:1rem;
+    border: 1px solid rgb(116, 119, 121);
+    margin: 20px auto;
+    width: 100%;
+
+}
+.imputClass:focus{
+    
+    
+    box-shadow: 0 0 6px rgb(141, 228, 242);
+        outline: none; /* Quita el borde azul predeterminado del navegador */
+
+}
+.botonForm{
+
+    padding:10px;
+    border-radius: 8px;
+    background-color: rgb(27, 112, 112);
+    color: white;
+    border:none;
+    width: 60%;
+    position: relative;
+    left:40px ;
+    margin:20px auto;
+}
+.botonForm:hover{
+background-color: rgb(44, 136, 136);
+ 
+}

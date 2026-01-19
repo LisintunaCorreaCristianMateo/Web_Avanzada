@@ -1,0 +1,54 @@
+/* Estilos para la página de Asignaturas */
+
+.asignaturas-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
+}
+
+.asignaturas-table thead {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+}
+
+.asignaturas-table th {
+  padding: 20px;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.asignaturas-table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.asignaturas-table tbody tr:hover {
+  background-color: #f8f9ff;
+  transform: scale(1.005);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.asignaturas-table td {
+  padding: 18px 20px;
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+.asignatura-nrc {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.asignatura-nombre {
+  font-weight: 500;
+}
+
+.asignatura-docente {
+  color: #495057;
+}
+
+.asignatura-especialidad {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-style: italic;
+}

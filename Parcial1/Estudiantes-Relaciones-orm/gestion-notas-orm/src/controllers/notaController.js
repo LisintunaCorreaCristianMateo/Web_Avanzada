@@ -1,4 +1,5 @@
 import {Nota } from "../models/nota.js";
+import {Estudiante } from "../models/estudiante.js";
 
 //procesos-funciones
 function enRango(nota){
@@ -72,7 +73,13 @@ export const obtenerNotas = async (_req, res) => {
 //obtener una nota por id
 export const obtenerNotaPorId = async (req, res) => {
     try{
-        const notas = await Nota.findByPk(req.params.id, {include: Estudiante});
+        const notas = await Nota.findByPk(req.params.id, {
+            attributes: ['id', 'asignatura', 'promedio', 'categoria'], // Solo campos específicos de Nota
+            include: {
+                model: Estudiante,
+                attributes: ['id', 'nombre', 'carrera'] // Solo campos específicos del Estudiante
+            }
+        });
         if(!notas){
             return res.status(404).json({message: "Nota no encontrada, verifique el ID"});
         }

@@ -1,0 +1,276 @@
+/* Estilos modernos para la tabla de estudiantes */
+
+.estudiantes-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.estudiantes-header {
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  color: white;
+  padding: 2rem;
+}
+
+.estudiantes-header h5 {
+  margin-bottom: 0;
+}
+
+.estudiantes-badge {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.estudiantes-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
+}
+
+.estudiantes-table thead {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.estudiantes-table th {
+  padding: 16px;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+}
+
+.estudiantes-table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.estudiantes-table tbody tr:hover {
+  background-color: #f8f9ff;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.estudiantes-table td {
+  padding: 16px;
+  vertical-align: middle;
+}
+
+.foto-estudiante {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #667eea;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(102, 126, 234, 0.4);
+}
+
+.foto-estudiante:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.6);
+}
+
+.foto-placeholder {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #a9a9a9 0%, #6b6b6b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #fdfdff;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(102, 126, 234, 0.4);
+}
+
+.foto-placeholder:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 12px rgba(102, 126, 234, 0.6);
+}
+
+/* Fotos en Modal de Detalles */
+.foto-perfil-modal {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #0d6efd;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  display: block;
+}
+
+.foto-perfil-placeholder-modal {
+  width: 150px;
+  height: 150px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #dee2e6;
+  color: #6c757d;
+  font-size: 60px;
+  margin: 0 auto;
+}
+
+.estudiante-id {
+  font-weight: 500;
+  color: #667eea;
+}
+
+.estudiante-nombre {
+  font-weight: 600;
+}
+
+.estudiante-email {
+  color: #6c757d;
+}
+
+.curso-badge {
+  background-color: #ffffff;
+  color: #495057;
+  border: 1px solid #e9ecef;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 
+              0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.curso-badge:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 
+              0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.curso-badge i {
+  color: #667eea;
+}
+
+.estado-badge {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.estado-badge.estado-activo {
+  background-color: #ffffff;
+  color: #495057;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 
+              0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.estado-badge.estado-activo:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 
+              0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.estado-badge.estado-activo i {
+  color: #28a745;
+}
+
+.estado-badge.estado-inactivo {
+  background-color: #6c757d;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-eliminar {
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  background-color: #ffffff !important;
+  border: 1px solid #e9ecef !important;
+  color: #6c757d !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 
+              0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.btn-eliminar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 
+              0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #f8f9fa !important;
+  border-color: #dee2e6 !important;
+}
+
+.btn-eliminar i {
+  color: #dc3545;
+}
+
+.no-estudiantes {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+}
+
+/* Botón Asignar Curso */
+.btn-asignar-curso {
+  background: #ffffff;
+  color: #2c3e50;
+  border: 1px solid #e0e0e0;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.btn-asignar-curso:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  color: #2c3e50;
+  background: #ffffff;
+  border-color: #e0e0e0;
+}
+
+/* Sección Cursos Matriculados */
+.cursos-matriculados-container {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.cursos-matriculados-titulo {
+  font-size: 1rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.cursos-matriculados-titulo i {
+  color: #64748b;
+}
+
+/* Badge de Asignatura Matriculada */
+.badge-asignatura-matriculada {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.9rem;
+  background: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.badge-asignatura-matriculada i {
+  color: #10b981;
+}
+
+/* Sin Asignación */
+.sin-asignacion {
+  padding: 1.5rem;
+  background: #fafafa;
+  border-radius: 8px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}

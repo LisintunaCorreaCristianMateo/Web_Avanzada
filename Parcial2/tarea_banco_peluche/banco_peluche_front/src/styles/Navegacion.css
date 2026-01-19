@@ -1,0 +1,45 @@
+.navegacion {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navegacion button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navegacion button:hover {
+  background: #f9fafb;
+  color: #111827;
+  border-color: #9ca3af;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navegacion button.activo {
+  background: #1f2937;
+  color: white;
+  border-color: #1f2937;
+}
+
+@media (max-width: 768px) {
+  .navegacion {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .navegacion button {
+    width: 100%;
+  }
+}

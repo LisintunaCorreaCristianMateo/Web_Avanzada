@@ -1,0 +1,24 @@
+.boton-contenedor{
+    background-color: black;
+    padding: 2rem;
+    margin:2px auto;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.boton-contenedorOperador{
+    background-color: #b3581f;
+    padding: 2rem;
+    margin:2px auto;
+    border-radius: 4px;
+    cursor:pointer;
+    border-radius: 10px;
+   
+
+}
+.boton-contenedor:hover{
+     background-color: rgb(49, 47, 47);
+}
+.boton-contenedorOperador:hover{
+        background-color: #b58a70;
+
+}

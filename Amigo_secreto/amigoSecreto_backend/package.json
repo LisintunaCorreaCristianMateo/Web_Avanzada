@@ -1,0 +1,27 @@
+{
+  "name": "amigosecreto_backend",
+  "version": "1.0.0",
+  "main": "app.js",
+   "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+     "dev": "node --watch app.js"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.2",
+    "nodemon": "^3.1.11",
+    "helmet": "^6.0.1",
+    "compression": "^1.7.4",
+    "morgan": "^1.10.0",
+    "express-rate-limit": "^6.8.0"
+  }
+}

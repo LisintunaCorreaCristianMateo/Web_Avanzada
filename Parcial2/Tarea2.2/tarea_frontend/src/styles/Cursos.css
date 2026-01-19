@@ -1,0 +1,116 @@
+/* Estilos modernos para la tabla de cursos */
+
+.cursos-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cursos-header {
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  color: white;
+  padding: 2rem;
+}
+
+.cursos-header h5 {
+  margin-bottom: 0;
+}
+
+.cursos-badge {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.cursos-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 0;
+}
+
+.cursos-table thead {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.cursos-table th {
+  padding: 16px;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+}
+
+.cursos-table tbody tr {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cursos-table tbody tr:hover {
+  background-color: #f8f9ff;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cursos-table td {
+  padding: 16px;
+  vertical-align: middle;
+}
+
+.curso-id {
+  font-weight: 500;
+  color: #667eea;
+}
+
+.curso-nombre {
+  font-weight: 600;
+}
+
+.btn-editar-curso {
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  background-color: #ffffff !important;
+  border: 1px solid #e9ecef !important;
+  color: #6c757d !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 
+              0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.btn-editar-curso:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 
+              0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #f8f9fa !important;
+  border-color: #dee2e6 !important;
+}
+
+.btn-editar-curso i {
+  color: #ffc107;
+}
+
+.btn-eliminar-curso {
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+  background-color: #ffffff !important;
+  border: 1px solid #e9ecef !important;
+  color: #6c757d !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 
+              0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.btn-eliminar-curso:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 
+              0 2px 6px rgba(0, 0, 0, 0.08);
+  background-color: #f8f9fa !important;
+  border-color: #dee2e6 !important;
+}
+
+.btn-eliminar-curso i {
+  color: #dc3545;
+}
+
+.no-cursos {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+}
